@@ -93,10 +93,11 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:clickable="true"
+            android:onClick="newaccount"
             android:text="@string/subrayado2"
             android:textColor="@color/orange"
             android:textStyle="bold"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="OnClick,TouchTargetSizeCheck" />
 
         <Button
             android:layout_width="370dp"
