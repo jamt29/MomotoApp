@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Momoto App</string>
+    <string name="subrayado"><u>I Forgot My Password</u></string>
+    <string name="subrayado2"><u>Create a new Account</u></string>
 </resources>
