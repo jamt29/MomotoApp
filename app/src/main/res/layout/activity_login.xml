@@ -21,28 +21,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="25dp"
             android:src="@drawable/logo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="25dp"
             android:text="Email"
             android:textSize="17dp" />
 
         <EditText
+
             android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:drawableRight="@drawable/correo"
-            android:hint="workdone@gmal.com" />
+            android:hint="workdone@gmal.com"
+            android:inputType="textEmailAddress"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="35dp"
             android:layout_marginTop="25dp"
             android:text="Password"
             android:textSize="17dp"
@@ -54,7 +56,8 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:drawableRight="@drawable/contra"
-            android:hint="*********" />
+            android:hint="*********"
+            android:inputType="textPassword"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,16 +71,21 @@
             android:textStyle="bold"
             tools:ignore="TouchTargetSizeCheck" />
 
-        <Switch
-            android:id="@+id/switch2"
+        <androidx.appcompat.widget.SwitchCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="20dp"
+            android:thumb="@drawable/thumb"
+            app:track="@drawable/track"
+            tools:ignore="TouchTargetSizeCheck" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remember password"
+            android:layout_marginLeft="35dp"
+
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,7 +102,7 @@
             android:layout_width="370dp"
             android:layout_height="62dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/bordes_boton"
             android:text="Login"
             android:textColor="@color/white"
