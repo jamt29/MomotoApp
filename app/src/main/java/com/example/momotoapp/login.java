@@ -18,4 +18,9 @@ public class login extends AppCompatActivity {
         Intent i = new Intent(login.this, newaccount.class);
         startActivity(i);
     }
+
+    public void forgot(View view) {
+        Intent i = new Intent(login.this, bienvenida.class);
+        startActivity(i);
+    }
 }
