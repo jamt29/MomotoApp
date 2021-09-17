@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Envio de pantalla a otra cuando termina los 3 segundos del splash screen
         TimerTask time = new TimerTask() {
             @Override
             public void run() {

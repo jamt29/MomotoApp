@@ -67,7 +67,6 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="35dp"
             android:clickable="true"
-            android:onClick="forgot"
             android:text="@string/subrayado"
             android:textColor="@color/orange"
             android:textStyle="bold"
