@@ -45,6 +45,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:onClick="ok"
         android:layout_gravity="center"
         android:background="@drawable/bordes_boton"
         android:text="OK!"

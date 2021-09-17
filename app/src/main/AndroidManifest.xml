@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light">
         <activity
+            android:name=".finish"
+            android:exported="true" />
+        <activity
             android:name=".bienvenida"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".newaccount"
             android:exported="true"
