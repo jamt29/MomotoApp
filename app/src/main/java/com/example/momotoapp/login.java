@@ -12,16 +12,20 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class login extends AppCompatActivity {
-    AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this ,"usuarios.db",null,1);
+
 
     private EditText  etemail, etpassword;
     private Button btnlogin;
-
+    private Cursor fila;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        etemail = (EditText) findViewById(R.id.etemail);
+        etpassword = (EditText) findViewById(R.id.etpassword);
+
     }
 
     public void newaccount(View view) {
@@ -29,32 +33,44 @@ public class login extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void forgot(View view) {
-        Intent i = new Intent(login.this, bienvenida.class);
-        startActivity(i);
-    }
+
 
     public void btnlogin(View view) {
-        SQLiteDatabase bd = admin.getWritableDatabase();
+
+         DBHelper admin = new DBHelper(this, "usuarios", null, 1);
+
+        SQLiteDatabase db = admin.getWritableDatabase();
 
         String email = etemail.getText().toString();
         String password = etpassword.getText().toString();
 
-        if (!email.isEmpty() && !password.isEmpty()){
-            Cursor fila = bd.rawQuery("Select email, password from usuarios where email= '" + email + "' and password='" + password + "'",null);
+        fila = db.rawQuery("select emailaddres, password1 from users where emailaddres='"+email+"' and password1='"+password+"'",null);
 
+        try {
             if (fila.moveToFirst()){
-                Intent login = new Intent(this, finish.class);
-                startActivity(login);
-                bd.close();
-            }else{
+                String usua = fila.getString(0);
+                String pass = fila.getString(1);
 
-                Toast.makeText( this, "No se encontraron datos del usuario", Toast.LENGTH_SHORT ).show();
-                bd.close();
+                if (email.equals(usua)&&password.equals(pass)){
+                    Intent i = new Intent(this, bienvenida.class);
+                    startActivity(i);
+                    etemail.setText("");
+                    etpassword.setText("");
+                }
+            } else {
+                Toast toast=Toast.makeText(this,"Datos incorrectos",Toast.LENGTH_LONG);
+                //mostramos el toast
+                toast.show();
             }
-        }else{
-            Toast.makeText( this, "Debes introducir un correo y una contraseña", Toast.LENGTH_SHORT).show();
-        }
+
+        } catch (Exception e) {//capturamos los errores que ubieran
+            Toast toast=Toast.makeText(this,"Error" + e.getMessage(),Toast.LENGTH_LONG);
+            //mostramos el mensaje
+            toast.show();
+
+            }
+
+
     }
 
 
